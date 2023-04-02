@@ -1,7 +1,6 @@
 class Course < ApplicationRecord
   belongs_to :user
-  # validates :course_name, presence: true, uniqueness: true
-  # validates :course_duration, :course_price, presence: true
+  validates :course_name, :course_description, :course_duration, :course_price, presence: true
   before_validation :ensure_teacher?
 
   private

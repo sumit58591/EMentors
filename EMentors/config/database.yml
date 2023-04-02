@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: Ementors_development
+  database: Ementors_development_new
   host: localhost
   port: 5432
   user: testuser
@@ -61,7 +61,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: Ementors_test
+  database: Ementors_test_new
   host: localhost
   port: 5432
   user: testuser
@@ -88,6 +88,6 @@ test:
 #
 production:
   <<: *default
-  database: Ementors_production
+  database: Ementors_production_new
   username: Ementors
   password: <%= ENV['EMENTORS_DATABASE_PASSWORD'] %>

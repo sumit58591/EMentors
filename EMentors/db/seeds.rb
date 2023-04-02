@@ -18,3 +18,13 @@ teachers.each do |teacher|
         )
     end
 end
+
+# 7.times do |i|
+#     User.create(
+#         first_name: "sumit#{i + 1}",
+#         last_name: "Verma#{i + 1}",
+#         email: "sumit#{i + 1}@yopmail.com",
+#         password: "123456",
+#         role: 1
+#     )
+# end
