@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
+    rescue_from ::ActiveRecord::RecordNotFound, with: :record_not_found
+    
     protected
-   
+    
     def is_student?
         redirect_to (request.env["HTTP_REFERER"] || courses_path), alert:"You are unauthorised for this!" unless current_user&.is_student?
     end
@@ -21,5 +23,12 @@ class ApplicationController < ActionController::Base
     
     def configure_permitted_parameters
         devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :role])
+        devise_parameter_sanitizer.permit(:account_update, keys:[:first_name, :last_name, :role])
+    end
+
+    private
+
+    def record_not_found
+        redirect_to courses_path , alert: "Record not found!"
     end
 end
