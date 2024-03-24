@@ -22,23 +22,20 @@
             <div class="card-body py-5 px-md-5">
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= render "users/shared/error_messages", resource: resource %>
-              <%# <form> %>
-                <!-- 2 column grid layout with text inputs for the first and last names -->
+  
                 <div class="row">
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
                       <%= f.label :first_name, class:"form-label", for:"form3Example1" %><br />
                       <%= f.text_field :first_name, autofocus: true, class:"form-control" %>
-                      <%# <input type="text" id="form3Example1" class="form-control" />
-                      <label class="form-label" for="form3Example1">First name</label> %>
+    
                     </div>
                   </div>
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
                       <%= f.label :last_name, class:"form-label", for:"form3Example2" %><br />
                       <%= f.text_field :last_name, autofocus: true, autofocus: true, id:"form3Example2", class:"form-control" %>
-                      <%# <input type="text" id="form3Example2" class="form-control" />
-                      <label class="form-label" for="form3Example2">Last name</label> %>
+
                     </div>
                   </div>
                 </div>
@@ -47,67 +44,25 @@
                 <div class="form-outline mb-4">
                   <%= f.label :email, class:"form-label", for:"form3Example3" %><br />
                   <%= f.email_field :email, autofocus: true, autocomplete: "email", id:"form3Example3", class:"form-control" %>
-                  <%# <input type="email" id="form3Example3" class="form-control" />
-                  <label class="form-label" for="form3Example3">Email address</label> %>
+
                 </div>
                 <div class="form-outline mb-4">
                     <%= f.select :role, collection: User.roles.keys %>
-                  <%# <input type="email" id="form3Example3" class="form-control" />
-                  <label class="form-label" for="form3Example3">Email address</label> %>
                 </div>
-                <!-- Password input -->
+
                 <div class="form-outline mb-4">
                   <%= f.label :password, class:"form-label", for:"form3Example4" %>
                   <% if @minimum_password_length %>
                     <em>(<%= @minimum_password_length %> characters minimum)</em>
                   <% end %><br />
                   <%= f.password_field :password, autocomplete: "new-password", id:"form3Example4", class:"form-control" %>
-                  
-                  <%# <input type="password" id="form3Example4" class="form-control" />
-                  <label class="form-label" for="form3Example4">Password</label> %>
                 </div>
 
                 <div class="form-outline mb-4">
                   <%= f.label :password_confirmation, class:"form-label", for:"form3Example4" %><br />
                   <%= f.password_field :password_confirmation, autocomplete: "new-password", id:"form3Example4", class:"form-control" %>
                 </div>
-
-                <!-- Checkbox -->
-                <%# <div class="form-check d-flex justify-content-center mb-4">
-                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-                  <label class="form-check-label" for="form2Example33">
-                    Subscribe to our newsletter
-                  </label>
-                </div> %>
-
-                <!-- Submit button -->
-                <%# <%= f.submit "Sign up", class:"btn btn-primary btn-block mb-4" %>
-                <%# <button type="submit" class="btn btn-primary btn-block mb-4">
-                  Sign up
-                </button> %>
-
-
-                <!-- Register buttons -->
-                <%# <div class="text-center">
-                  <p>or sign up with:</p>
-                  <button type="button" class="btn btn-link btn-floating mx-1">
-                    <i class="fab fa-facebook-f"></i>
-                  </button>
-
-                  <button type="button" class="btn btn-link btn-floating mx-1">
-                    <i class="fab fa-google"></i>
-                  </button>
-
-                  <button type="button" class="btn btn-link btn-floating mx-1">
-                    <i class="fab fa-twitter"></i>
-                  </button>
-
-                  <button type="button" class="btn btn-link btn-floating mx-1">
-                    <i class="fab fa-github"></i>
-                  </button>
-                </div> %>
-                <%# <%= link_to "Log in", new_session_path(resource_name), class:"link-primary" %>
-                
+        
                   <div class="text-center text-lg-start mt-4 pt-2">
                     <%= f.submit "Sign up", class:"btn btn-primary btn-block mb-4",
                         style:"padding-left: 2.5rem; padding-right: 2.5rem;"%>

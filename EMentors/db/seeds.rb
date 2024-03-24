@@ -6,27 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-teachers = User.teachers
-teachers.each do |teacher|
-    puts teacher
-    5.times do |i|
-        teacher.courses.create(
-            course_name: "Course #{i + 5}",
-            course_description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-            course_duration: "#{i + 1} months",
-            course_price: "200/-"
-        )
-    end
-end
-
-# 7.times do |i|
-#     User.create(
-#         first_name: "sumit#{i + 1}",
-#         last_name: "Verma#{i + 1}",
-#         email: "sumit#{i + 1}@yopmail.com",
-#         password: "123456",
-#         role: 1
-#     )
 # teachers = User.teachers
 # teachers.each do |teacher|
 #     puts teacher
@@ -37,6 +16,28 @@ end
 #             course_duration: "#{i + 1} months",
 #             course_price: "200/-"
 #         )
+#     end
+# end
+
+# 7.times do |i|
+#     User.create(
+#         first_name: "sumit#{i + 1}",
+#         last_name: "Verma#{i + 1}",
+#         email: "sumit#{i + 1}@yopmail.com",
+#         password: "123456",
+#         role: 1
+#     )
+#     teachers = User.teachers
+#     teachers.each do |teacher|
+#         puts teacher
+#         5.times do |i|
+#             teacher.courses.create(
+#                 course_name: "Course #{i + 5}",
+#                 course_description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+#                 course_duration: "#{i + 1} months",
+#                 course_price: "200/-"
+#             )
+#         end
 #     end
 # end
 
@@ -54,3 +55,13 @@ end
 # @courses.each do |course|
 #     course.course_price = 200
 # end
+
+7.times do |i|
+    User.create(
+        first_name: "sumit#{i + 10}",
+        last_name: "Verma#{i + 10}",
+        email: "sumit#{i + 10}@yopmail.com",
+        password: "123456",
+        role: 0
+    )
+end

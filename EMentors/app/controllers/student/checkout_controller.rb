@@ -5,10 +5,8 @@ module Student
         
         def create
             @session = CheckoutCreator.new(current_user, @course, checkout_success_url, checkout_cancel_url, @payment).call
-            # byebug
             respond_to do |format|
-                format.js
-                # format.html { redirect_to root_path }   
+                format.js 
             end
         end
 
@@ -16,7 +14,6 @@ module Student
             session_id = params[:session_id]
             expand = ["line_items"]
             session_with_expand = CheckoutRetrieve.new(session_id, expand, @payment).call
-            # byebug
             @course_name = session_with_expand.line_items.data[0].description
             @course = Course.find_by(course_name: @course_name)
         end

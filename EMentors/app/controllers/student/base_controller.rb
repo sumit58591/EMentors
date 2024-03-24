@@ -4,6 +4,3 @@ module Student
         layout 'student'
     end
 end
-
-
-#debugger
