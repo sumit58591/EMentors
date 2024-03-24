@@ -13,7 +13,6 @@
         </tr>
     </thead>
     <tbody>
-    <%# byebug %>
         <% @course.topics.kept.each do |topic| %>
             <tr>
                 <td><%= topic.topic_name %> </td>
@@ -23,7 +22,7 @@
                 <% end %>
                 <td><%= link_to 'Edit Topic', edit_course_topic_path(course_id: @course, id: topic), class:"btn btn-info"%> 
                 <% if @course.purchases.count == 0 %>
-                    <td>  <button id="<%=topic.id%>", onclick="delete_topic(this)", class="btn btn-danger">Delete Topic</button> </td>
+                    <td> <%= link_to 'Delete Topic', course_topic_path(topic) , class:'btn btn-danger', method: :delete%> </td>
                 <% end %>
             </tr>
         <% end %>
